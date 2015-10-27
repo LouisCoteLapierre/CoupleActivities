@@ -1,0 +1,60 @@
+﻿<Window x:Class="CoupleActivitiesInterface.Interface.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow" Height="600" Width="1000">
+    <Grid>
+        <Grid HorizontalAlignment="Left" Height="550" Margin="150,10,0,0" VerticalAlignment="Top" Width="831" Tag="ActivitiesGrid"/>
+        <Grid HorizontalAlignment="Left" Height="275" Margin="10,10,0,0" VerticalAlignment="Top" Width="135" Tag="MenuGrid">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
+            <Button Grid.Row="0" Content="Créer une activité" HorizontalAlignment="Center" Margin="0,0,0,0" VerticalAlignment="Top" Width="120" Height="40" Tag="CreateActivitiesButton" Click="CreateActivityButton_Click"/>
+            <Button Grid.Row="1" Content="Sauvegarder" HorizontalAlignment="Center" Margin="0,0,0,0" VerticalAlignment="Top" Width="120" Height="40" Tag="SaveActivitiesButton" Click="SaveActivitiesButton_Click"/>
+        </Grid>
+        <Grid HorizontalAlignment="Left" Height="269" Margin="10,290,0,0" VerticalAlignment="Top" Width="135" Tag="FiltersGrid">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="40" />
+                    <ColumnDefinition Width="95" />
+                </Grid.ColumnDefinitions>
+                <Button Grid.Column="0" Width="40" Height="Auto" Content="Filter" Tag="FilterActivitiesButton" Click="FilterActivitiesButton_Click" HorizontalAlignment="Left"/>
+                <TextBox Grid.Column="1" Width="95" Height="Auto" Text="Activity's name..." Tag="ActivityNameTextBox" HorizontalAlignment="Left"/>
+            </Grid>
+            <ComboBox Height="Auto" Width="135" Grid.Row="1" Tag="StudentPriceComboBox"/>
+            <Grid Grid.Row="2" Tag="Open">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="60" />
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="60" />
+                    <ColumnDefinition Width="Auto" />
+                </Grid.ColumnDefinitions>
+                <TextBox Height="Auto" Width="40" Grid.Column="0" Tag="OpeningHourHoursValue"/>
+                <TextBox Height="Auto" Width="40" Grid.Column="2" Tag="OpeningHourMinutesValue"/>
+                <Label />
+            </Grid>
+        </Grid>
+    </Grid>
+</Window>

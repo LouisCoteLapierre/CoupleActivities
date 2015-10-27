@@ -1,0 +1,27 @@
+Titre de l'activite (textbox) // 1 row in filters
+
+Heure d'ouverture (datepicker) // 1 row in filters
+Heure de fermeture (datepicker) // 1 row in filters
+
+Jours d'ouverture (Tout le temps, semaine, fds) (listbox) // 1 row in filters
+
+// Those 2 in the same row for filters
+Participants minimum (textbox for numbers)    
+Participants maximum (textbox for numbers)
+
+Prix etudiant (list box) // 1 row in filters
+Prix adulte (list box) // 1 row in filters
+
+Addresse (text box) // 1 row in filters
+
+Energie necessaire (demandant/ peu demandant) (list box) // 1 row in filters
+
+Materiel necessaire (textbox) // 1 row in filters (gros textbox maybe)
+
+Transport (marche/velo, metro, char) (list box) // 1 row in filters
+
+Duree (Court ( moins d1h), Moyen (entre 1 et 2h), Long (plus de 2h)) (list box)// 1 row in filters
+
+Temperature (Peu importe, Soleil, Neige) (list box) // 1 row in filters
+
+Categorie (food, activite culturelle, ...) (list box) // 1 row in filters
