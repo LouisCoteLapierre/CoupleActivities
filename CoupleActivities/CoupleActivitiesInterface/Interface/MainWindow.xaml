@@ -1,9 +1,19 @@
 ﻿<Window x:Class="CoupleActivitiesInterface.Interface.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="MainWindow" Height="600" Width="1000">
+        Title="MainWindow" Height="665" Width="1000">
     <Grid>
-        <Grid HorizontalAlignment="Left" Height="550" Margin="150,10,0,0" VerticalAlignment="Top" Width="831" Tag="ActivitiesGrid"/>
+        <Grid HorizontalAlignment="Left" Height="624" Margin="150,10,0,0" VerticalAlignment="Top" Width="831" Tag="ActivitiesGrid">
+            <ListView Margin="10" Tag="ActivitiesListView">
+                <ListView.View>
+                    <GridView>
+                        <GridViewColumn Header="Title" Width="120" DisplayMemberBinding="{Binding Name}" />
+                        <GridViewColumn Header="Age" Width="50" DisplayMemberBinding="{Binding Age}" />
+                        <GridViewColumn Header="Mail" Width="150" DisplayMemberBinding="{Binding Mail}" />
+                    </GridView>
+                </ListView.View>
+            </ListView>
+        </Grid>
         <Grid HorizontalAlignment="Left" Height="275" Margin="10,10,0,0" VerticalAlignment="Top" Width="135" Tag="MenuGrid">
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto" />
@@ -15,11 +25,12 @@
             <Button Grid.Row="0" Content="Créer une activité" HorizontalAlignment="Center" Margin="0,0,0,0" VerticalAlignment="Top" Width="120" Height="40" Tag="CreateActivitiesButton" Click="CreateActivityButton_Click"/>
             <Button Grid.Row="1" Content="Sauvegarder" HorizontalAlignment="Center" Margin="0,0,0,0" VerticalAlignment="Top" Width="120" Height="40" Tag="SaveActivitiesButton" Click="SaveActivitiesButton_Click"/>
         </Grid>
-        <Grid HorizontalAlignment="Left" Height="269" Margin="10,290,0,0" VerticalAlignment="Top" Width="135" Tag="FiltersGrid">
+        <Grid HorizontalAlignment="Left" Height="344" Margin="10,290,0,0" VerticalAlignment="Top" Width="135" Tag="FiltersGrid">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="Auto"/>
             </Grid.ColumnDefinitions>
             <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
                 <RowDefinition Height="Auto" />
                 <RowDefinition Height="Auto" />
                 <RowDefinition Height="Auto" />
@@ -40,21 +51,52 @@
                     <ColumnDefinition Width="40" />
                     <ColumnDefinition Width="95" />
                 </Grid.ColumnDefinitions>
-                <Button Grid.Column="0" Width="40" Height="Auto" Content="Filter" Tag="FilterActivitiesButton" Click="FilterActivitiesButton_Click" HorizontalAlignment="Left"/>
-                <TextBox Grid.Column="1" Width="95" Height="Auto" Text="Activity's name..." Tag="ActivityNameTextBox" HorizontalAlignment="Left"/>
+                <Button Grid.Column="0" Width="40" Height="Auto" Content="Filter" Tag="FiltersSearchButton" Click="FiltersSearchButton_Click" HorizontalAlignment="Left"/>
+                <TextBox Grid.Column="1" Width="95" Height="Auto" Text="Activity's name..." Tag="FiltersActivityNameTextBox" HorizontalAlignment="Left"/>
             </Grid>
-            <ComboBox Height="Auto" Width="135" Grid.Row="1" Tag="StudentPriceComboBox"/>
-            <Grid Grid.Row="2" Tag="Open">
+            <ComboBox Height="Auto" Width="135" Grid.Row="1" Tag="FiltersStudentPriceComboBox"/>
+            <Grid Grid.Row="2" Tag="FiltersOpeningHourGrid">
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="60" />
                     <ColumnDefinition Width="Auto" />
-                    <ColumnDefinition Width="60" />
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="Auto" />
                     <ColumnDefinition Width="Auto" />
                 </Grid.ColumnDefinitions>
-                <TextBox Height="Auto" Width="40" Grid.Column="0" Tag="OpeningHourHoursValue"/>
-                <TextBox Height="Auto" Width="40" Grid.Column="2" Tag="OpeningHourMinutesValue"/>
-                <Label />
+                <TextBox Height="Auto" Width="40" Grid.Column="0" Tag="FiltersOpeningHourHoursValue" />
+                <TextBox Height="Auto" Width="40" Grid.Column="2" Tag="FiltersOpeningHourMinutesValue" />
+                <Label Height="Auto" Width="Auto" Grid.Column="1" Content="h" />
+                <Label Height="Auto" Width="Auto" Grid.Column="3" Content="m" />
             </Grid>
+            <Grid Grid.Row="3" Tag="FiltersClosingHourGrid">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="Auto" />
+                </Grid.ColumnDefinitions>
+                <TextBox Height="Auto" Width="40" Grid.Column="0" Tag="FiltersClosingHoursHoursValue" />
+                <TextBox Height="Auto" Width="40" Grid.Column="2" Tag="FiltersClosingHoursMinutesValue" />
+                <Label Height="Auto" Width="Auto" Grid.Column="1" Content="h" />
+                <Label Height="Auto" Width="Auto" Grid.Column="3" Content="m" />
+            </Grid>
+            <ComboBox Height="Auto" Width="135" Grid.Row="4" Tag="FiltersOpeningDaysComboBox" />
+            <Grid Grid.Row="5">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="Auto" />
+                </Grid.ColumnDefinitions>
+                <TextBox Height="Auto" Width="Auto" Grid.Column="0" Tag="FiltersMinParticipantsTextBox" Text="Min." />
+                <TextBox Height="Auto" Width="Auto" Grid.Column="1" Tag="FiltersMaxParticipantsTextBox" Text="Max" />
+            </Grid>
+            <ComboBox Height="Auto" Width="135" Grid.Row="6" Tag="FiltersStudentPriceComboBox" />
+            <ComboBox Height="Auto" Width="135" Grid.Row="7" Tag="FiltersAdultPriceComboBox" />
+            <TextBox Height="Auto" Width="Auto" Grid.Row="8" Tag="FiltersAddressTextBox" Text="Addresse ou endroit" />
+            <ComboBox Height="Auto" Width="135" Grid.Row="9" Tag="FiltersEnergyNeededComboBox" />
+            <TextBox Height="Auto" Width="Auto" Grid.Row="10" Tag="FiltersMaterialNeededTextBox" Text="Materiel necessaire" />
+            <ComboBox Height="Auto" Width="135" Grid.Row="11" Tag="FiltersTransportComboBox" />
+            <ComboBox Height="Auto" Width="135" Grid.Row="12" Tag="FiltersDurationComboBox" />
+            <ComboBox Height="Auto" Width="135" Grid.Row="13" Tag="FiltersTemperatureComboBox" />
+            <ComboBox Height="Auto" Width="135" Grid.Row="14" Tag="FiltersCategoryComboBox" />
         </Grid>
     </Grid>
 </Window>

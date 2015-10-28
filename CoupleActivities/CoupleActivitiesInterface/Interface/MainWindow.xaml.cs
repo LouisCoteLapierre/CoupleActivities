@@ -35,7 +35,7 @@ namespace CoupleActivitiesInterface.Interface
 
         }
 
-        private void FilterActivitiesButton_Click(object sender, RoutedEventArgs e)
+        private void FiltersSearchButton_Click(object sender, RoutedEventArgs e)
         {
 
         }
