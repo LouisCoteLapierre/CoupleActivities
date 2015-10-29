@@ -1,15 +1,27 @@
 ﻿<Window x:Class="CoupleActivitiesInterface.Interface.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="MainWindow" Height="665" Width="1000">
+        Title="MainWindow" Height="665" Width="1445">
     <Grid>
-        <Grid HorizontalAlignment="Left" Height="624" Margin="150,10,0,0" VerticalAlignment="Top" Width="831" Tag="ActivitiesGrid">
+        <Grid HorizontalAlignment="Left" Height="624" Margin="150,10,0,0" VerticalAlignment="Top" Width="1277" Tag="ActivitiesGrid">
             <ListView Margin="10" Tag="ActivitiesListView">
                 <ListView.View>
                     <GridView>
-                        <GridViewColumn Header="Title" Width="120" DisplayMemberBinding="{Binding Name}" />
-                        <GridViewColumn Header="Age" Width="50" DisplayMemberBinding="{Binding Age}" />
-                        <GridViewColumn Header="Mail" Width="150" DisplayMemberBinding="{Binding Mail}" />
+                        <GridViewColumn Header="Nom" Width="Auto" DisplayMemberBinding="{Binding Name}" />
+                        <GridViewColumn Header="Heure d'ouverture" Width="Auto" DisplayMemberBinding="{Binding OpeningHour}" />
+                        <GridViewColumn Header="Heure de fermeture" Width="Auto" DisplayMemberBinding="{Binding ClosingHour}" />
+                        <GridViewColumn Header="Jours ouverts" Width="Auto" DisplayMemberBinding="{Binding DaysOpen}" />
+                        <GridViewColumn Header="Participants minimum" Width="Auto" DisplayMemberBinding="{Binding MinimumParticipants}" />
+                        <GridViewColumn Header="Participants maximum" Width="Auto" DisplayMemberBinding="{Binding MaximumParticipants}" />
+                        <GridViewColumn Header="Prix étudiant" Width="Auto" DisplayMemberBinding="{Binding StudentPrice}" />
+                        <GridViewColumn Header="Prix adulte" Width="Auto" DisplayMemberBinding="{Binding AdultPrice}" />
+                        <GridViewColumn Header="Adresse" Width="Auto" DisplayMemberBinding="{Binding Address}" />
+                        <GridViewColumn Header="Énergie" Width="Auto" DisplayMemberBinding="{Binding EnergyNeeded}" />
+                        <GridViewColumn Header="Matériel" Width="Auto" DisplayMemberBinding="{Binding MaterialNeeded}" />
+                        <GridViewColumn Header="Transport" Width="Auto" DisplayMemberBinding="{Binding Transport}" />
+                        <GridViewColumn Header="Durée" Width="Auto" DisplayMemberBinding="{Binding Duration}" />
+                        <GridViewColumn Header="Température" Width="Auto" DisplayMemberBinding="{Binding Temperature}" />
+                        <GridViewColumn Header="Catégorie" Width="Auto" DisplayMemberBinding="{Binding Category}" />
                     </GridView>
                 </ListView.View>
             </ListView>
